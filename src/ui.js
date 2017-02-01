@@ -36,9 +36,9 @@ $(document).ready(function() {
         $thermostat.down(1);
         if ($thermostat._currentTemp >= $thermostat._minTemp) {
             updateThermometer();
-        } else {
-            $(".error").html("Cannot lower temperature below " + $thermostat._minTemp);
-        }
+        } //else {
+        //     $(".error").html("Cannot lower temperature below " + $thermostat._minTemp);
+        // }
     });
 
     $(".temp-up").click(function(event) {
@@ -46,9 +46,9 @@ $(document).ready(function() {
         $thermostat.up(1);
         if ($thermostat._currentTemp <= $thermostat._maxTemp) {
             updateThermometer();
-        } else {
-            $(".error").html("Cannot exceed max temperature of " + $thermostat._maxTemp);
-        }
+        } //else {
+        //     $(".error").html("Cannot exceed max temperature of " + $thermostat._maxTemp);
+        // }
     });
 
     $(".temp-reset").click(function(event) {
