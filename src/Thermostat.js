@@ -14,7 +14,6 @@ Thermostat.prototype.temp = function() {
 Thermostat.prototype.up = function(num) {
     if((this._currentTemp + num) > this._maxTemp)  {
 		var maxError = 'Cannot exceed max temperature of ' + this._maxTemp;
-		alert(maxError);
         throw new Error(maxError);
     }
     this._currentTemp += num;
@@ -23,7 +22,6 @@ Thermostat.prototype.up = function(num) {
 Thermostat.prototype.down = function(num) {
 	if((this._currentTemp - num) < this._minTemp) {
 		var minError = 'Cannot lower temperature below ' + this._maxTemp;
-		alert(minError);
         throw new Error(minError);
 	}
     this._currentTemp -= num;
@@ -48,7 +46,7 @@ Thermostat.prototype.switchPowerSaving = function() {
 };
 
 Thermostat.prototype.energyUsage = function() {
-	if(this._currentTemp < 18) { return "Low usage"; }
-	if(this._currentTemp < 25) { return "Medium usage"; }
-	return "High usage";
+	if(this._currentTemp < 18) { return "low-usage"; }
+	if(this._currentTemp < 25) { return "medium-usage"; }
+	return "high-usage";
 };

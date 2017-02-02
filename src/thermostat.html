@@ -8,42 +8,79 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="ui.js"></script>
     <link href="https://use.fontawesome.com/c6d6077668.css" media="all" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="topbar">
-        <h1>Thermostat</h1>
+        <section>
+            <h1>———— THE ————<br /> THERMINATOR </h1>
+        </section>
+        <div class="error"></div>
     </div>
     <main>
         <div class="left">
             <div class="temp-controls">
-                <button class="temp-down">
-                    DOWN
-                </button>
-                <button class="temp-up">
-                    UP
-                </button>
-                <button class="temp-reset">
-                    RESET
-                </button>
-            </div>
-            <div class="power-saving">
-                <button class="power-saving-butt">
-                    POWER SAVING OFF
-                </button>
+                <section class="temp-up">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </section>
+                <section class="temp-down">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </section>
+                <section class="temp-reset">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </section>
+                <section class="power-saving">
+                    <i class="fa fa-leaf ps-on" aria-hidden="true"></i>
+                </section>
             </div>
         </div>
+        <div class="middle">
+            <section class="hal">
+                <img src="HAL9000.svg" />
+                <span class="temp">20&deg;C</span>
+            </section>
+        </div>
         <div class="right">
-            <div class="display">
-                <div class="thermometer">
-                    <span class="temp">20&deg;C</span>
-                    <span class="usage">Medium usage</span>
-                </div>
-                <div class="power-saving-status">
-                    <i class="fa fa-leaf" aria-hidden="true"></i>
-                </div>
-            </div>
+                <section class="weather">
+                    <!-- <select id="current-city">
+                      <option value="poultonlefylde">Poulton-le-Fylde</option>
+                      <option value="london">London</option>
+                      <option value="newyork">New York</option>
+                      <option value="paris">Paris</option>
+                      <option value="tokyo">Tokyo</option>
+                    </select> -->
+                    <ul class="info">
+                        <li>
+                            Location: <span id="location"><span>
+                        </li>
+                        <li>
+                            Daily High: <span id="high-temp"><span>
+                        </li>
+                        <li>
+                            Daily Low: <span id="low-temp"><span>
+                        </li>
+                        <li>
+                            Current Temp: <span id="current-temp"><span>
+                        </li>
+                        <li>
+                            Current Weather: <span id="current-weather"><span>
+                        </li>
+                        <li>
+                            Wind Speed: <span id="wind-speed"><span>
+                        </li>
+                    </ul>
+
+                </section>
+        </div>
+        <div class="bottom">
+            <section class="thermometer">
+
+            </section>
+            <section id="energy-usage">
+
+            </section>
         </div>
     </main>
 

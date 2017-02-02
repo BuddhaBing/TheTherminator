@@ -24,15 +24,15 @@ describe('Feature: ', function() {
     });
     it('can report low energy usage', function() {
         thermostat.down(3);
-        expect(thermostat.energyUsage()).toEqual('Low usage');
+        expect(thermostat.energyUsage()).toEqual('low-usage');
     });
     it('can report medium energy usage', function() {
-        expect(thermostat.energyUsage()).toEqual('Medium usage');
+        expect(thermostat.energyUsage()).toEqual('medium-usage');
     });
     it('can report high energy usage', function() {
         thermostat.switchPowerSaving();
         thermostat.up(6);
-        expect(thermostat.energyUsage()).toEqual('High usage');
+        expect(thermostat.energyUsage()).toEqual('high-usage');
     });
 
     // expect(thermostat.temp()).toBeGreaterThan(9);

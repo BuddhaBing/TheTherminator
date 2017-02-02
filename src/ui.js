@@ -3,18 +3,37 @@ $(document).ready(function() {
     var $oneDegree = (100 / ($thermostat._maxTemp - $thermostat._minTemp));
     var $currentPercent = ($thermostat._maxTemp - $thermostat._currentTemp) * $oneDegree;
     var $bubbleColor;
-
-    bubbleBackground = function() {
-        if ($thermostat.energyUsage() === "Low usage") { $bubbleColor = "#00d000"; }
-        else if ( $thermostat.energyUsage() === "Medium usage") { $bubbleColor = "orange"; }
-        else { $bubbleColor = "red"; }
-        $(".thermometer:before").css("background", $bubbleColor);
-        $('head').append('<style>.thermometer:before, .thermometer:after{background:' + $bubbleColor + '!important;}</style>');
-        $(".usage").html($thermostat.energyUsage());
+    var $city = "poulton-le-fylde";
+    weather = function() {
+        $.get('http://api.openweathermap.org/data/2.5/weather?q=' + $city + '&appid=01d3fab55cf01107d01773f82f524721&units=metric', function(data) {
+            $('#location').text(data.name);
+            $('#high-temp').text(data.main.temp_max + "°C");
+            $('#low-temp').text(data.main.temp_min + "°C");
+            $('#current-temp').text(data.main.temp + "°C");
+            $('#current-weather').text(data.weather[0].main);
+            $('#wind-speed').text(data.wind.speed + " MPH");
+        });
     };
 
+    weather();
+
+    $("#current-city").change(function() {
+        // $city = $("#current-city").val();
+        weather();
+    });
+
+    // bubbleBackground = function() {
+    //     if ($thermostat.energyUsage() === "Low usage") { $bubbleColor = "#00d000"; }
+    //     else if ( $thermostat.energyUsage() === "Medium usage") { $bubbleColor = "orange"; }
+    //     else { $bubbleColor = "red"; }
+    //     $('head').append('<style>.thermometer:before, .thermometer:after{background:' + $bubbleColor + '!important;}</style>');
+    //     $(".usage").html($thermostat.energyUsage());
+    // };
+
     thermBackground = function() {
-        $(".thermometer").css("background", "-webkit-linear-gradient(top, #fff 0%, #fff " + $currentPercent + "%, " + $bubbleColor + " " + $currentPercent + "%, " + $bubbleColor + " 100%");
+        $("#energy-usage").attr("class", $thermostat.energyUsage());
+        $("#energy-usage").text($thermostat.energyUsage().replace("-usage", " energy usage").toUpperCase());
+        $(".thermometer").css("background", "-webkit-linear-gradient(right, #000 0%, #000 " + $currentPercent + "%, crimson " + $currentPercent + "%, crimson 100%");
     };
 
     tempDisplay = function() {
@@ -24,7 +43,7 @@ $(document).ready(function() {
     updateThermometer = function() {
         $oneDegree = (100 / ($thermostat._maxTemp - $thermostat._minTemp));
         $currentPercent = ($thermostat._maxTemp - $thermostat._currentTemp) * $oneDegree;
-        bubbleBackground();
+        // bubbleBackground();
         thermBackground();
         tempDisplay();
     };
@@ -32,23 +51,13 @@ $(document).ready(function() {
     updateThermometer();
 
     $(".temp-down").click(function(event) {
-        $currentPercent += $oneDegree;
         $thermostat.down(1);
-        if ($thermostat._currentTemp >= $thermostat._minTemp) {
-            updateThermometer();
-        } //else {
-        //     $(".error").html("Cannot lower temperature below " + $thermostat._minTemp);
-        // }
+        updateThermometer();
     });
 
     $(".temp-up").click(function(event) {
-        $currentPercent -= $oneDegree;
         $thermostat.up(1);
-        if ($thermostat._currentTemp <= $thermostat._maxTemp) {
-            updateThermometer();
-        } //else {
-        //     $(".error").html("Cannot exceed max temperature of " + $thermostat._maxTemp);
-        // }
+        updateThermometer();
     });
 
     $(".temp-reset").click(function(event) {
@@ -56,15 +65,17 @@ $(document).ready(function() {
         updateThermometer();
     });
 
-    $(".power-saving-butt").click(function(event) {
+    $(".power-saving").click(function(event) {
         $thermostat.switchPowerSaving();
         if ($thermostat.isPowerSavingOn()) {
-            $(".fa-leaf").css("color", "#00d000");
-            $(".power-saving-butt").html("POWER SAVING OFF");
+            $(".fa-leaf").removeClass("ps-off");
+            $(".fa-leaf").addClass("ps-on");
+            // $(".power-saving-butt").html("POWER SAVING OFF");
             if($thermostat._currentTemp > $thermostat._maxTemp) {$thermostat._currentTemp = $thermostat._maxTemp;}
         } else {
-            $(".fa-leaf").css("color", "gray");
-            $(".power-saving-butt").html("POWER SAVING ON");
+            $(".fa-leaf").removeClass("ps-on");
+            $(".fa-leaf").addClass("ps-off");
+            // $(".power-saving-butt").html("POWER SAVING ON");
         }
         updateThermometer();
     });
