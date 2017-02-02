@@ -4,7 +4,7 @@ $(document).ready(function() {
     var oneDegree = (100 / (thermostat._maxTemp - thermostat._minTemp));
     var currentPercent = (thermostat._maxTemp - thermostat._currentTemp) * oneDegree;
     var lat = 0;
-    var long = 0;
+    var lon = 0;
 
     function getLocation() {
         if (navigator.geolocation) {
