@@ -17,7 +17,9 @@ describe('Thermostat', function() {
         expect(thermostat._currentTemp).toEqual(18);
     });
     it('has a minimum temperature of 10', function() {
-        expect(function(){ thermostat.down(20); }).toThrowError('Cannot lower temperature below 10');
+        // expect(function(){ thermostat.down(20); }).toThrowError('Cannot lower temperature below 10');
+        var minTemp = thermostat._minTemp;
+        expect(thermostat.down(20)).toEqual('Cannot lower temperature below ' + minTemp + "°C");
     });
     it('can reset the temperature to 20', function() {
         thermostat.reset()
@@ -37,7 +39,8 @@ describe('Thermostat', function() {
     });
     it('does not allow the max temp to be exceeded', function() {
         var maxTemp = thermostat._maxTemp;
-        expect(function(){thermostat.up(6)}).toThrowError('Cannot exceed max temperature of ' + maxTemp)
+        // expect(function(){thermostat.up(6)}).toThrowError('Cannot exceed max temperature of ' + maxTemp)
+        expect(thermostat.up(6)).toEqual('Cannot raise temperature above ' + maxTemp + "°C")
     });
     it('can report energy usage', function() {
         expect(thermostat.energyUsage()).toMatch('usage');

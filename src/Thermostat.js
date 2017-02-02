@@ -13,18 +13,20 @@ Thermostat.prototype.temp = function() {
 
 Thermostat.prototype.up = function(num) {
     if((this._currentTemp + num) > this._maxTemp)  {
-		var maxError = 'Cannot exceed max temperature of ' + this._maxTemp;
-        throw new Error(maxError);
+		var maxError = 'Cannot raise temperature above ' + this._maxTemp + "°C";
+		return maxError;
     }
     this._currentTemp += num;
+	return "";
 };
 
 Thermostat.prototype.down = function(num) {
 	if((this._currentTemp - num) < this._minTemp) {
-		var minError = 'Cannot lower temperature below ' + this._maxTemp;
-        throw new Error(minError);
+		var minError = 'Cannot lower temperature below ' + this._minTemp + "°C";
+        return minError;
 	}
     this._currentTemp -= num;
+	return "";
 };
 
 Thermostat.prototype.reset = function() {

@@ -2,10 +2,24 @@ $(document).ready(function() {
     $thermostat = new Thermostat();
     var $oneDegree = (100 / ($thermostat._maxTemp - $thermostat._minTemp));
     var $currentPercent = ($thermostat._maxTemp - $thermostat._currentTemp) * $oneDegree;
-    var $bubbleColor;
-    var $city = "poulton-le-fylde";
-    weather = function() {
-        $.get('http://api.openweathermap.org/data/2.5/weather?q=' + $city + '&appid=01d3fab55cf01107d01773f82f524721&units=metric', function(data) {
+    var lat = 53.843964;
+    var long = -2.986281;
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            console.log(navigator.geolocation.getCurrentPosition(weather));
+        } else {
+            $("#error").html("Geolocation is not supported by this browser");
+        }
+        weather();
+    }
+
+    function weather(position) {
+        if(position) {
+            lat = position.coords.latitude;
+            long = position.coords.longitude;
+        }
+        $.get("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=01d3fab55cf01107d01773f82f524721&units=metric", function(data) {
             $('#location').text(data.name);
             $('#high-temp').text(data.main.temp_max + "°C");
             $('#low-temp').text(data.main.temp_min + "°C");
@@ -13,14 +27,9 @@ $(document).ready(function() {
             $('#current-weather').text(data.weather[0].main);
             $('#wind-speed').text(data.wind.speed + " MPH");
         });
-    };
+    }
 
-    weather();
-
-    $("#current-city").change(function() {
-        // $city = $("#current-city").val();
-        weather();
-    });
+    getLocation();
 
     thermBackground = function() {
         $("#energy-usage").attr("class", $thermostat.energyUsage());
@@ -42,12 +51,12 @@ $(document).ready(function() {
     updateThermometer();
 
     $(".temp-down").click(function(event) {
-        $thermostat.down(1);
+        $("#error").text($thermostat.down(1));
         updateThermometer();
     });
 
     $(".temp-up").click(function(event) {
-        $thermostat.up(1);
+        $("#error").text($thermostat.up(1));
         updateThermometer();
     });
 
@@ -61,7 +70,9 @@ $(document).ready(function() {
         if ($thermostat.isPowerSavingOn()) {
             $(".fa-leaf").removeClass("ps-off");
             $(".fa-leaf").addClass("ps-on");
-            if($thermostat._currentTemp > $thermostat._maxTemp) {$thermostat._currentTemp = $thermostat._maxTemp;}
+            if ($thermostat._currentTemp > $thermostat._maxTemp) {
+                $thermostat._currentTemp = $thermostat._maxTemp;
+            }
         } else {
             $(".fa-leaf").removeClass("ps-on");
             $(".fa-leaf").addClass("ps-off");

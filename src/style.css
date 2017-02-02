@@ -38,7 +38,7 @@ body {
     color: #fff;
 }
 
-#energy-usage {
+#energy-usage, #error {
     width: 80%;
     margin: auto;
     height: 60%;
@@ -47,10 +47,15 @@ body {
     font-family: Oswald, sans-serif;
     letter-spacing: 2px;
     text-align: center;
-}
 
+    margin-bottom: 1.5em;
+    text-transform: uppercase;
+}
+#error {
+    color: yellow;
+}
 .low-usage {
-    color: green;
+    color: #00d000;
 }
 
 .medium-usage {
@@ -164,4 +169,7 @@ h1 {
     top: 38%;
     left: 38%;
     text-shadow: 0 2px 6px #000;
+}
+li > span {
+    color: #fff;
 }
