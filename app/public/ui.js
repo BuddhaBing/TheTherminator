@@ -1,5 +1,6 @@
 $(document).ready(function() {
     thermostat = new Thermostat();
+    console.log(thermostat);
     var oneDegree = (100 / (thermostat._maxTemp - thermostat._minTemp));
     var currentPercent = (thermostat._maxTemp - thermostat._currentTemp) * oneDegree;
     var lat = 0;
@@ -7,7 +8,7 @@ $(document).ready(function() {
 
     function getLocation() {
         if (navigator.geolocation) {
-            console.log(navigator.geolocation.getCurrentPosition(weather));
+            navigator.geolocation.getCurrentPosition(weather);
         } else {
             $("#error").html("Geolocation is not supported by this browser");
         }
