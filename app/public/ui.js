@@ -73,12 +73,14 @@ $(document).ready(function() {
         if (thermostat.isPowerSavingOn()) {
             $(".fa-leaf").removeClass("ps-off");
             $(".fa-leaf").addClass("ps-on");
+            $("#error").text("");
             if (thermostat._currentTemp > thermostat._maxTemp) {
                 thermostat._currentTemp = thermostat._maxTemp;
             }
         } else {
             $(".fa-leaf").removeClass("ps-on");
             $(".fa-leaf").addClass("ps-off");
+            $("#error").text("");
         }
         updateThermometer();
     });
