@@ -1,20 +1,3 @@
-/* Thermometer column and text */
-
-
-/*.thermometer {
-width: 30px;
-height: 350px;
-display: block;
-font: bold 14px/152px helvetica, arial, sans-serif;
-text-indent: 44px;
-background: -webkit-linear-gradient(top, #fff 0%, #fff 35%, orange 35%, orange 100%);
-border-radius: 22px;
-border: 5px solid #4a1c03;
-position: absolute;
-box-shadow: inset 0 0 0 4px #fff;
-color: #4a1c03;
-}*/
-
 @font-face {
     font-family: 'Terminator Real NFI';
     font-style: normal;
@@ -78,60 +61,8 @@ body {
     color: red;
 }
 
-
-/*.thermometer {
-    margin: 20% 0 0 70%;
-    left: -15px;
-    top: -100px;
-    width: 22px;
-    height: 150px;
-    display: block;
-    font: bold 14px/152px helvetica, arial, sans-serif;
-    text-indent: 36px;
-    background: -webkit-linear-gradient(top, #fff 0%, #fff 35%, orange 35%, orange 100%);
-    border-radius: 22px 22px 0 0;
-    border: 5px solid #4a1c03;
-    border-bottom: none;
-    position: absolute;
-    box-shadow: inset 0 0 0 4px #fff;
-    color: #4a1c03;
-}
-
-
-.thermometer:before {
-    content: ' ';
-    width: 44px;
-    height: 44px;
-    display: block;
-    position: absolute;
-    top: 142px;
-    left: -16px;
-    z-index: -1;
-    background: orange;
-    border-radius: 44px;
-    border: 5px solid #4a1c03;
-    box-shadow: inset 0 0 0 4px #fff;
-}
-
-.thermometer:after {
-    content: ' ';
-    width: 14px;
-    height: 7px;
-    display: block;
-    position: absolute;
-    top: 146px;
-    left: 4px;
-    background: orange;
-}*/
-
-
-/*.temp-controls {
-    margin-bottom: 5em;
-}*/
-
 .topbar {
     width: 100%;
-    /*border-bottom: 1px solid #BABABA;*/
     margin-bottom: 5em;
 }
 
@@ -139,10 +70,6 @@ main {
     width: 75%;
     height: 100%;
     margin: auto;
-    /*background: url(HAL9000.svg);
-    background-repeat: no-repeat;
-    background-size: 20vw;
-    background-position: center;*/
 }
 
 h1 {
@@ -164,25 +91,6 @@ h1 {
     box-shadow: 0 0 4px 0px #828282;
     margin-right: .5em;
 }
-
-
-/*, .temp-down, .temp-up, .temp-reset*/
-
-
-/*.left {
-    width: 70%;
-    float: left;
-}
-
-.right {
-    width: 30%;
-    float: right;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
-    position: relative;
-}*/
 
 .left, .right, .middle {
     position: relative;
@@ -217,16 +125,12 @@ h1 {
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
-    /*transition: 0.5s;
-   transition-timing-function: linear;*/
 }
 
 .fa-refresh:active {
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
-    /*transition: 0.5s;
-   transition-timing-function: linear;*/
 }
 
 .ps-on {

@@ -22,14 +22,6 @@ $(document).ready(function() {
         weather();
     });
 
-    // bubbleBackground = function() {
-    //     if ($thermostat.energyUsage() === "Low usage") { $bubbleColor = "#00d000"; }
-    //     else if ( $thermostat.energyUsage() === "Medium usage") { $bubbleColor = "orange"; }
-    //     else { $bubbleColor = "red"; }
-    //     $('head').append('<style>.thermometer:before, .thermometer:after{background:' + $bubbleColor + '!important;}</style>');
-    //     $(".usage").html($thermostat.energyUsage());
-    // };
-
     thermBackground = function() {
         $("#energy-usage").attr("class", $thermostat.energyUsage());
         $("#energy-usage").text($thermostat.energyUsage().replace("-usage", " energy usage").toUpperCase());
@@ -43,7 +35,6 @@ $(document).ready(function() {
     updateThermometer = function() {
         $oneDegree = (100 / ($thermostat._maxTemp - $thermostat._minTemp));
         $currentPercent = ($thermostat._maxTemp - $thermostat._currentTemp) * $oneDegree;
-        // bubbleBackground();
         thermBackground();
         tempDisplay();
     };
@@ -70,12 +61,10 @@ $(document).ready(function() {
         if ($thermostat.isPowerSavingOn()) {
             $(".fa-leaf").removeClass("ps-off");
             $(".fa-leaf").addClass("ps-on");
-            // $(".power-saving-butt").html("POWER SAVING OFF");
             if($thermostat._currentTemp > $thermostat._maxTemp) {$thermostat._currentTemp = $thermostat._maxTemp;}
         } else {
             $(".fa-leaf").removeClass("ps-on");
             $(".fa-leaf").addClass("ps-off");
-            // $(".power-saving-butt").html("POWER SAVING ON");
         }
         updateThermometer();
     });
