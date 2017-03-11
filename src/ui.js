@@ -3,11 +3,11 @@ $(document).ready(function() {
     var oneDegree = (100 / (thermostat._maxTemp - thermostat._minTemp));
     var currentPercent = (thermostat._maxTemp - thermostat._currentTemp) * oneDegree;
     var lat = 0;
-    var long = 0;
+    var lon = 0;
 
     function getLocation() {
         if (navigator.geolocation) {
-            console.log(navigator.geolocation.getCurrentPosition(weather));
+            navigator.geolocation.getCurrentPosition(weather);
         } else {
             $("#error").html("Geolocation is not supported by this browser");
         }
@@ -72,12 +72,14 @@ $(document).ready(function() {
         if (thermostat.isPowerSavingOn()) {
             $(".fa-leaf").removeClass("ps-off");
             $(".fa-leaf").addClass("ps-on");
+            $("#error").text("");
             if (thermostat._currentTemp > thermostat._maxTemp) {
                 thermostat._currentTemp = thermostat._maxTemp;
             }
         } else {
             $(".fa-leaf").removeClass("ps-on");
             $(".fa-leaf").addClass("ps-off");
+            $("#error").text("");
         }
         updateThermometer();
     });
