@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/treborb/TheTherminator.svg?branch=master)](https://travis-ci.org/treborb/TheTherminator)
 [![codecov](https://codecov.io/gh/treborb/TheTherminator/branch/master/graph/badge.svg)](https://codecov.io/gh/treborb/TheTherminator)
 
-## [Makers Academy](http://www.makersacademy.com) - Week 5 - Midweek Paired Programming Challenge
+## [Makers Academy](http://www.makersacademy.com) - Week 5 - Paired Programming Challenge
 
 ## Technologies
 * [Javascript ES5](https://www.javascript.com/)
@@ -55,7 +55,7 @@ Open the HTML file in your default browser:
 $ open index.html
 ```
 
-OR
+***OR***
 
 ```
 $ npm start
