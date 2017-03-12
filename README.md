@@ -100,7 +100,8 @@ $ open SpecRunner.html
 ```
 
 ## <a name="demo">[Heroku Demo](https://the-therminator.herokuapp.com/)</a>
-Click on the link above to see a live demo
+* Click on the link above to see a live demo.
+* Please note: weather does not work on the demo due to the content being blocked by the browser as insecure content. This is a limitation imposed on free accounts by the API
 
 ## <a name="screenshots">Screenshots</a>
 

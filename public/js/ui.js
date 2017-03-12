@@ -19,7 +19,7 @@ $(document).ready(function() {
             lat = position.coords.latitude;
             lon = position.coords.longitude;
         }
-        url = "http://api.openweathermap.org/data/2.5/weather?lat=";
+        url = "//api.openweathermap.org/data/2.5/weather?lat=";
         apiKey = "&appid=01d3fab55cf01107d01773f82f524721&units=metric";
         $.get(url + lat + "&lon=" + lon + apiKey, function(data) {
             $('#location').text(data.name);
