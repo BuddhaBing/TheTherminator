@@ -86,7 +86,7 @@ $ open http://localhost:3000
 
 ## <a name="tests">Running the tests</a>
 
-There are two ways to run the tests, the first relies on having NPM (Node Package Manager) installed:
+There are two ways to run the tests, the first relies on having [NPM (Node Package Manager)](https://www.npmjs.com/) and [Grunt](https://gruntjs.com/) installed:
 
 ```sh
 $ npm update
