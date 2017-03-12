@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/ui.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> ui.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.17% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.17% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/58</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">$(document).ready(<span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >    thermostat = new Thermostat();</span>
+<span class="cstat-no" title="statement not covered" >    var oneDegree = (100 / (thermostat._maxTemp - thermostat._minTemp));</span>
+<span class="cstat-no" title="statement not covered" >    var currentPercent = (thermostat._maxTemp - thermostat._currentTemp) * oneDegree;</span>
+<span class="cstat-no" title="statement not covered" >    var lat = 0;</span>
+<span class="cstat-no" title="statement not covered" >    var lon = 0;</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getLocation() {</span>
+<span class="cstat-no" title="statement not covered" >        if (navigator.geolocation) {</span>
+<span class="cstat-no" title="statement not covered" >            navigator.geolocation.getCurrentPosition(weather);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            $("#error").html("Geolocation is not supported by this browser");</span>
+        }
+<span class="cstat-no" title="statement not covered" >        weather();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function weather(position) {</span>
+<span class="cstat-no" title="statement not covered" >        if(position) {</span>
+<span class="cstat-no" title="statement not covered" >            lat = position.coords.latitude;</span>
+<span class="cstat-no" title="statement not covered" >            lon = position.coords.longitude;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        url = "http://api.openweathermap.org/data/2.5/weather?lat=";</span>
+<span class="cstat-no" title="statement not covered" >        apiKey = "&amp;appid=01d3fab55cf01107d01773f82f524721&amp;units=metric";</span>
+<span class="cstat-no" title="statement not covered" >        $.get(url + lat + "&amp;lon=" + lon + apiKey, <span class="fstat-no" title="function not covered" >function(data) {</span></span>
+<span class="cstat-no" title="statement not covered" >            $('#location').text(data.name);</span>
+<span class="cstat-no" title="statement not covered" >            $('#high-temp').text(data.main.temp_max + "°C");</span>
+<span class="cstat-no" title="statement not covered" >            $('#low-temp').text(data.main.temp_min + "°C");</span>
+<span class="cstat-no" title="statement not covered" >            $('#current-temp').text(data.main.temp + "°C");</span>
+<span class="cstat-no" title="statement not covered" >            $('#current-weather').text(data.weather[0].main);</span>
+<span class="cstat-no" title="statement not covered" >            $('#wind-speed').text(data.wind.speed + " MPH");</span>
+        });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    getLocation();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    thermBackground = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        $("#energy-usage").attr("class", thermostat.energyUsage());</span>
+<span class="cstat-no" title="statement not covered" >        $("#energy-usage").text(thermostat.energyUsage().replace("-usage", " energy usage").toUpperCase());</span>
+<span class="cstat-no" title="statement not covered" >        $(".thermometer").css("background", "-webkit-linear-gradient(right, #000 0%, #000 " + currentPercent + "%, crimson " + currentPercent + "%, crimson 100%");</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    tempDisplay = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        $(".temp").html(thermostat._currentTemp + "&amp;deg;C");</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    updateThermometer = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        oneDegree = (100 / (thermostat._maxTemp - thermostat._minTemp));</span>
+<span class="cstat-no" title="statement not covered" >        currentPercent = (thermostat._maxTemp - thermostat._currentTemp) * oneDegree;</span>
+<span class="cstat-no" title="statement not covered" >        thermBackground();</span>
+<span class="cstat-no" title="statement not covered" >        tempDisplay();</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    updateThermometer();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    $(".temp-down").click(<span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >        $("#error").text(thermostat.down(1));</span>
+<span class="cstat-no" title="statement not covered" >        updateThermometer();</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    $(".temp-up").click(<span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >        $("#error").text(thermostat.up(1));</span>
+<span class="cstat-no" title="statement not covered" >        updateThermometer();</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    $(".temp-reset").click(<span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >        thermostat.reset();</span>
+<span class="cstat-no" title="statement not covered" >        updateThermometer();</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    $(".power-saving").click(<span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >        thermostat.switchPowerSaving();</span>
+<span class="cstat-no" title="statement not covered" >        if (thermostat.isPowerSavingOn()) {</span>
+<span class="cstat-no" title="statement not covered" >            $(".fa-leaf").removeClass("ps-off");</span>
+<span class="cstat-no" title="statement not covered" >            $(".fa-leaf").addClass("ps-on");</span>
+<span class="cstat-no" title="statement not covered" >            $("#error").text("");</span>
+<span class="cstat-no" title="statement not covered" >            if (thermostat._currentTemp &gt; thermostat._maxTemp) {</span>
+<span class="cstat-no" title="statement not covered" >                thermostat._currentTemp = thermostat._maxTemp;</span>
+            }
+        } else {
+<span class="cstat-no" title="statement not covered" >            $(".fa-leaf").removeClass("ps-on");</span>
+<span class="cstat-no" title="statement not covered" >            $(".fa-leaf").addClass("ps-off");</span>
+<span class="cstat-no" title="statement not covered" >            $("#error").text("");</span>
+        }
+<span class="cstat-no" title="statement not covered" >        updateThermometer();</span>
+    });
+&nbsp;
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Mar 11 2017 18:16:43 GMT+0000 (GMT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
