@@ -11,6 +11,7 @@
 * [Google Maps Geolocation API](https://developers.google.com/maps/documentation/geolocation/intro)
 * [OpenWeatherMap API](https://openweathermap.org/api)
 * [Jasmine v2.5.3](https://jasmine.github.io/)
+* [Node Static](https://www.npmjs.com/package/node-static)
 * [Grunt](https://gruntjs.com/)
 * [NPM](https://www.npmjs.com/)
 
@@ -51,7 +52,14 @@ $ cd TheTherminator
 Open the HTML file in your default browser:
 
 ```
-$ open src/therminator.html
+$ open index.html
+```
+
+OR
+
+```
+$ npm start
+$ open http://localhost:3000
 ```
 
 #### Hints on the UI
