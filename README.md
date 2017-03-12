@@ -86,10 +86,17 @@ $ open http://localhost:3000
 
 ## <a name="tests">Running the tests</a>
 
-There are two ways to run the tests:
+There are two ways to run the tests, the first relies on having NPM (Node Package Manager) installed:
 
 ```sh
-$ rspec
+$ npm update
+$ grunt jasmine
+```
+
+Or to run the tests in the web browser:
+
+```sh
+$ open SpecRunner.html
 ```
 
 ## <a name="demo">[Heroku Demo](https://the-therminator.herokuapp.com/)</a>
