@@ -92,7 +92,7 @@ There are two ways to run the tests:
 $ rspec
 ```
 
-## <a name="demo">[Heroku Demo](https://rock-paper-scissors-liz-spk.herokuapp.com)</a>
+## <a name="demo">[Heroku Demo](https://the-therminator.herokuapp.com/)</a>
 Click on the link above to see a live demo
 
 ## <a name="screenshots">Screenshots</a>
